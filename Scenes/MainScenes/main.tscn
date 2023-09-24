@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dclknpy6fsknk"]
+
+[ext_resource type="PackedScene" uid="uid://wppk45sf4v05" path="res://Scenes/Maps/map_1.tscn" id="1_8v5sb"]
+[ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="2_tupxa"]
+
+[node name="Main" type="Node"]
+
+[node name="Map1" parent="." instance=ExtResource("1_8v5sb")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(962, 546)
+
+[node name="PathSpawner" type="Node2D" parent="."]
+script = ExtResource("2_tupxa")
+
+[node name="Timer" type="Timer" parent="PathSpawner"]
+autostart = true
+
+[connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
