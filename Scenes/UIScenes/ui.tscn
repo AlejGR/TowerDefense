@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://4m2j2xvqd6g8"]
+
+[ext_resource type="PackedScene" uid="uid://bdcj0r4mwst7i" path="res://Scenes/UIScenes/RedTowerPanel.tscn" id="1_n3805"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 119.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 1904.0
+offset_bottom = 99.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="RedTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("1_n3805")]
+layout_mode = 2

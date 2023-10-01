@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcj0r4mwst7i"]
+
+[ext_resource type="Script" path="res://Scenes/UIScenes/RedTowerPanel.gd" id="1_ptpnv"]
+[ext_resource type="Texture2D" uid="uid://ey6475t75aso" path="res://Assets/Towers/towerDefense_tile250.png" id="2_xsx7o"]
+
+[node name="RedTowerPanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ptpnv")
+
+[node name="TowerDefenseTile250" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+rotation = 4.71239
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_xsx7o")
+
+[node name="Cooldown" type="Timer" parent="TowerDefenseTile250"]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="TowerDefenseTile250/Cooldown" to="." method="_on_cooldown_timeout"]

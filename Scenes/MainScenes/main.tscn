@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wppk45sf4v05" path="res://Scenes/Maps/map_1.tscn" id="1_8v5sb"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="2_tupxa"]
-[ext_resource type="PackedScene" uid="uid://cyjt8e30whiir" path="res://Scenes/Turrets/RedBulletTower.tscn" id="3_lrxa3"]
+[ext_resource type="PackedScene" uid="uid://4m2j2xvqd6g8" path="res://Scenes/UIScenes/ui.tscn" id="4_nmjmo"]
 
 [node name="Main" type="Node"]
 
@@ -16,8 +16,7 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 position = Vector2(260, 454)
-metadata/_edit_group_ = true
 
-[node name="GunT1" parent="Towers" instance=ExtResource("3_lrxa3")]
+[node name="UI" parent="." instance=ExtResource("4_nmjmo")]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
